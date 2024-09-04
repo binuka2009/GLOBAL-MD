@@ -212,7 +212,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
 				  if (!('badword' in group)) group.badword = false
                   if (!('antiforeignnum' in group)) group.antiforeignnum = false
                   if (!('antibot' in group)) group.antibot = false
-                  if (!('antiviewonce' in group)) group.antiviewonce = false
+                  if (!('antiviewonce' in group)) group.antiviewonce = true
                   if (!('antispam' in group)) group.antispam = false
                   if (!('antimedia' in group)) group.media = false
                   if (!('antivirtex' in group)) group.antivirtex = false
@@ -230,12 +230,12 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
 			} else {
 				global.db.groups[m.chat] = {
 				  ntsfw: false,
-				  welcome: false,
+				  welcome: true,
 				  setinfo: false,
 				  badword: false,
                   antiforeignnum: false,
                   antibot: false,
-                  antiviewonce: false,
+                  antiviewonce: true,
                   antispam: false,
                   antivirtex: false,
                   antimedia: false,
@@ -256,7 +256,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
             if (typeof setting !== 'object') global.db.settings[botNumber] = {}
             if (setting) {
             	if (!('anticall' in setting)) setting.anticall = false
-               if (!('antiswview' in setting)) setting.antiswview = false
+               if (!('antiswview' in setting)) setting.antiswview = true
                if (!('totalhit' in setting)) setting.totalhit = 0
                if (!('totalError' in setting)) setting.totalError = 0
                if (!('online' in setting)) setting.online = false 
@@ -274,7 +274,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
                if (!('onlypc' in setting)) setting.onlypc = false
             } else global.db.settings[botNumber] = {
                anticall: false,
-           	antiswview: false,
+           	antiswview: true,
                totalhit: 0,
                totalError: 0,
                online: false,
